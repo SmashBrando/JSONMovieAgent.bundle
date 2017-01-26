@@ -99,6 +99,45 @@ The structure of the `Info.json` file follows as closely as possible that of the
       "spoof"
     ]
 }
+```
 
+Example Artoo Scraper
+------------
 
+If you're like me you hate manually building the info.json file manually. That's where [Artoo](http://medialab.github.io/artoo/scrape/) comes in. By using the follwing structure, it's pretty easy to create a custom scraper to build your Info.json file automatically
+
+```jquery
+artoo.scrape('SELECTOR', {
+  title: {sel: 'SELECTOR'},
+  original_title: {sel: 'SELECTOR'},
+  summary: {sel: 'SELECTOR'},
+  year: {sel: 'SELECTOR'},
+  originally_available_at: {sel: 'SELECTOR'},
+  rating: {sel: 'SELECTOR'},
+  content_rating: {sel: 'SELECTOR'},
+  studio: {sel: 'SELECTOR'},
+  duration: {sel: 'SELECTOR'},
+  roles: {
+    scrape: {
+      iterator: 'SELECTOR',
+      data: {
+        name: {sel: 'SELECTOR'},
+        role: {sel: 'SELECTOR'},
+        photo: {sel: 'SELECTOR' attr: 'href'}
+      }
+    }
+  },
+  genres: {
+    scrape: {
+    iterator: 'SELECTOR',
+    data: 'text'
+    }
+  },
+  collections: {
+    scrape: {
+    iterator: 'SELECTOR',
+    data: 'text'
+    }
+  }
+}, artoo.savePrettyJson);
 ```
