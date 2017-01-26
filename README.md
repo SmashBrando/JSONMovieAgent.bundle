@@ -139,5 +139,5 @@ artoo.scrape('SELECTOR', {
     data: 'text'
     }
   }
-}, artoo.savePrettyJson);
+}, artoo.savePrettyJson(data, [Info.json]));
 ```
