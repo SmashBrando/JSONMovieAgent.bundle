@@ -20,7 +20,7 @@ This agent doesn't collect any metadata itself — it simply loads metadata from
 It's designed to work alongside other tools and methods of collecting metadata, be it a custom scraper (it doesn't even have to be written in Python), browser plugin, command line tool or GUI. You could even edit the files by hand :)
 
 
-Media Preperation
+Media Preparation
 -----------------
 
 At the time of writing, JSON metadata is supported *for movies only*.
@@ -29,10 +29,11 @@ To define metadata for a movie, a JSON file named exactly `Info.json` must be pr
 
 ```
 Movies
-  |- Akira (1988)
-      |- akira.1988.720p.bluray.x264.mp4
+  |- Spaceballs (1987)
+      |- Spaceballs.mp4
       |- Info.json
-      |- Poster.jpg
+      |- Cover.jpg
+      |- Background.jpg
 ```
 
 This means you are limited to a single movie and `Info.json` file per directory.
@@ -45,28 +46,59 @@ The structure of the `Info.json` file follows as closely as possible that of the
 
 ```json
 {
-	"title": "Akira",
-    "summary": "Childhood friends Tetsuo and Kaneda are pulled into the...",
-    "year": 1988,
-    "rating": 7.7,
-    "content_rating": "M",
-    "studio": "Bandai Visual Company",
-    "duration": 124,
-    "directors": [
-      "Katsuhiro Ōtomo"
-    ],
+    "title": "Spaceballs",
+    "original_title": "Spaceballs",
+    "summary": "Planet Spaceballs' President Skroob sends Lord Dark Helmet to steal planet Druidia's abundant supply of air to replenish their own, and only Lone Starr can stop them.",
+    "year": 1987,
+    "originally_available_at": "1987-06-24",
+    "rating": 6.6,
+    "content_rating": "PG",
+    "studio": "STUDIO NAME",
+    "duration": 96,
     "roles": [
-    	{
-        	"actor": "Mitsuo Iwata",
-            "role": "Shôtarô Kaneda"
-        },
+      {
+        "name" : "Mel Brooks",
+        "role": "President Skroob/Yoghurt",
+        "photo": "https://image.tmdb.org/t/p/w264_and_h264_bestv2/ndFo3LOYNCUghQTK833N1Wtuynr.jpg"
+      },
+      {
+        "name" : "Rick Moranis",
+        "role": "Dark Helmet",
+        "photo": "https://image.tmdb.org/t/p/w264_and_h264_bestv2/27dRb7OyRGzQP8D4tzyY6dEdmQY.jpg"
+      },
+      {
+        "name" : "Bill Pullman",
+        "role": "Lone Starr",
+        "photo": "https://image.tmdb.org/t/p/w264_and_h264_bestv2/pIpTEQVbDif8m8OdjAxQKNCj0D6.jpg"
+      }
     ],
     "genres": [
-    	"Animation",
-        "Science Fiction"
+      "Adventure",
+      "Comedy",
+      "Sci-Fi"
     ],
     "collections": [
-    	"Anime"
+      "android",
+      "lasergun",
+      "swordplay",
+      "temple",
+      "space marine",
+      "space battle",
+      "space travel",
+      "space mission",
+      "galaxy",
+      "comb",
+      "altar",
+      "magnet beam",
+      "jam",
+      "speed of light",
+      "plastic surgery",
+      "password",
+      "shield",
+      "nose",
+      "spoof"
     ]
 }
+
+
 ```
